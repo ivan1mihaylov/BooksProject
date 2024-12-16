@@ -115,14 +115,14 @@ public partial class MainScreen : MaterialForm
     private void BooksListView_MouseDoubleClick(object sender, MouseEventArgs e)
     {
         ListViewHitTestInfo info = BooksListView.HitTest(e.X, e.Y);
-        ListViewItem item = info.Item;
-
-        var book = Books.FirstOrDefault(b => b.Name == item.Text && b.Author == item.SubItems[1].Text);
-        var audioBook = AudioBooks.FirstOrDefault(b => b.Name == item.Text && b.Author == item.SubItems[1].Text);
+        ListViewItem item = info.Item ?? new ListViewItem();
 
         if (item != null)
         {
-            MessageBox.Show($"{book?.ToString() ?? audioBook?.ToString()}", "Информация за избтаната книга");
+            var book = Books.FirstOrDefault(b => b.Name == item.Text && b.Author == item.SubItems[1].Text);
+            var audioBook = AudioBooks.FirstOrDefault(b => b.Name == item.Text && b.Author == item.SubItems[1].Text);
+
+            MessageBox.Show($"{book?.ToString() ?? audioBook?.ToString()}", "Информация за избраната книга");
         }
     }
 

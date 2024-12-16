@@ -1,4 +1,5 @@
 using BooksProject.Forms;
+using Common;
 using Common.Models;
 using System.Text.Json;
 
@@ -24,10 +25,25 @@ public static class Program
             {
                 books.AddRange(JsonSerializer.Deserialize<List<Book>>(booksJson) ?? []);
             }
+            else
+            {
+                books.AddRange(SeedData.Books);
+            }
+
             if (!string.IsNullOrEmpty(audioBooksJson))
             {
                 audioBooks.AddRange(JsonSerializer.Deserialize<List<AudioBook>>(audioBooksJson) ?? []);
             }
+            else
+            {
+                audioBooks.AddRange(SeedData.AudioBooks);
+            }
+        }
+        else
+        {
+            Directory.CreateDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data"));
+            books.AddRange(SeedData.Books);
+            audioBooks.AddRange(SeedData.AudioBooks);
         }
 
         var mainForm = new MainScreen(books, audioBooks);

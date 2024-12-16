@@ -54,7 +54,7 @@ partial class MainScreen
         AddButton.Depth = 0;
         AddButton.ForeColor = SystemColors.ControlText;
         AddButton.Icon = Properties.Resources.plus;
-        AddButton.Location = new Point(725, 546);
+        AddButton.Location = new Point(771, 546);
         AddButton.MouseState = MaterialSkin.MouseState.HOVER;
         AddButton.Name = "AddButton";
         AddButton.Size = new Size(56, 56);
@@ -74,14 +74,14 @@ partial class MainScreen
         BooksListView.Font = new Font("Microsoft Sans Serif", 34F, FontStyle.Bold, GraphicsUnit.Pixel);
         BooksListView.FullRowSelect = true;
         BooksListView.Location = new Point(3, 3);
-        BooksListView.MaximumSize = new Size(478, 420);
-        BooksListView.MinimumSize = new Size(478, 420);
+        BooksListView.MaximumSize = new Size(528, 420);
+        BooksListView.MinimumSize = new Size(528, 420);
         BooksListView.MouseLocation = new Point(-1, -1);
         BooksListView.MouseState = MaterialSkin.MouseState.OUT;
         BooksListView.Name = "BooksListView";
         BooksListView.OwnerDraw = true;
-        BooksListView.Scrollable = false;
-        BooksListView.Size = new Size(478, 420);
+        BooksListView.Scrollable = true;
+        BooksListView.Size = new Size(528, 420);
         BooksListView.TabIndex = 2;
         BooksListView.UseCompatibleStateImageBehavior = false;
         BooksListView.View = View.Details;
@@ -96,7 +96,7 @@ partial class MainScreen
         // AuthorColumn
         // 
         AuthorColumn.Text = "Автор";
-        AuthorColumn.Width = 100;
+        AuthorColumn.Width = 110;
         // 
         // GenreColumn
         // 
@@ -106,14 +106,14 @@ partial class MainScreen
         // LanguageColumn
         // 
         LanguageColumn.Text = "Език";
-        LanguageColumn.Width = 100;
+        LanguageColumn.Width = 120;
         // 
         // BooksPreviewPanel
         // 
         BooksPreviewPanel.Controls.Add(BooksListView);
         BooksPreviewPanel.Location = new Point(310, 97);
         BooksPreviewPanel.Name = "BooksPreviewPanel";
-        BooksPreviewPanel.Size = new Size(483, 426);
+        BooksPreviewPanel.Size = new Size(528, 426);
         BooksPreviewPanel.TabIndex = 3;
         // 
         // materialLabel1
@@ -134,7 +134,7 @@ partial class MainScreen
         DeleteButton.Depth = 0;
         DeleteButton.ForeColor = SystemColors.ControlText;
         DeleteButton.Icon = Properties.Resources.trash;
-        DeleteButton.Location = new Point(725, 546);
+        DeleteButton.Location = new Point(771, 546);
         DeleteButton.MouseState = MaterialSkin.MouseState.HOVER;
         DeleteButton.Name = "DeleteButton";
         DeleteButton.Size = new Size(56, 56);
@@ -148,7 +148,7 @@ partial class MainScreen
         // 
         AutoScaleDimensions = new SizeF(7F, 15F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(799, 618);
+        ClientSize = new Size(844, 618);
         Controls.Add(DeleteButton);
         Controls.Add(materialLabel1);
         Controls.Add(AddButton);

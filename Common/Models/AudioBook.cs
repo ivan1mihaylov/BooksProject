@@ -2,9 +2,10 @@
 
 namespace Common.Models;
 
-public class AudioBook : Book
+public class AudioBook : Book, IComparable<Book>
 {
     public AudioBook() { }
+
     public AudioBook(
             string name,
             string author,
@@ -25,8 +26,6 @@ public class AudioBook : Book
     public TimeSpan Duration { get; set; }
     public decimal Price { get; set; }
 
-
-
     public override string ToString()
     {
         return base.ToString() + $", Име на четец: {Narrator}, Продължителност: {Duration.TotalMinutes} минути, Цена: {Price:0.00} лв.";
@@ -40,5 +39,28 @@ public class AudioBook : Book
     public bool IsFree()
     {
         return Price == 0;
+    }
+
+    public int CompareTo(Book? other)
+    {
+        if (other == null)
+        {
+            return 1;
+        }
+
+        return Name.CompareTo(other.Name);
+    }
+
+    public class SortDurationAscending : IComparer<AudioBook>
+    {
+        public int Compare(AudioBook? x, AudioBook? y)
+        {
+            if (x == null || y == null)
+            {
+                return 0;
+            }
+
+            return x.Duration.CompareTo(y.Duration);
+        }
     }
 }

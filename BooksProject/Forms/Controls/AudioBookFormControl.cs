@@ -14,7 +14,7 @@ public partial class AudioBookFormControl : UserControl
 
     private void SetGenreComboBoxDataSource()
     {
-        GenreComboBox.DataSource = Enum.GetValues(typeof(LiteratureGenre));
+        GenreComboBox.DataSource = Enum.GetValues<LiteratureGenre>();
     }
 
 
