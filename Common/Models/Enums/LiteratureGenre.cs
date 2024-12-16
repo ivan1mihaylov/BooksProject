@@ -1,4 +1,4 @@
-﻿namespace BooksProject.Enums;
+﻿namespace Common.Models.Enums;
 
 public enum LiteratureGenre
 {

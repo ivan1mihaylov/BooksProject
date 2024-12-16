@@ -1,6 +1,6 @@
-﻿using BooksProject.Enums;
+﻿using Common.Models.Enums;
 
-namespace BooksProject.Models;
+namespace Common.Models;
 
 public class Book
 {

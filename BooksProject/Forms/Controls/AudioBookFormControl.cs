@@ -1,4 +1,5 @@
-﻿using BooksProject.Models;
+﻿using Common.Models;
+using Common.Models.Enums;
 
 namespace BooksProject.Forms.Controls;
 
@@ -13,7 +14,7 @@ public partial class AudioBookFormControl : UserControl
 
     private void SetGenreComboBoxDataSource()
     {
-        GenreComboBox.DataSource = Enum.GetValues(typeof(Enums.LiteratureGenre));
+        GenreComboBox.DataSource = Enum.GetValues(typeof(LiteratureGenre));
     }
 
 
@@ -22,7 +23,7 @@ public partial class AudioBookFormControl : UserControl
         return new AudioBook(
             NameTextBox.Text,
             AuthorTextBox.Text,
-            (Enums.LiteratureGenre)(GenreComboBox.SelectedItem ?? Enums.LiteratureGenre.AppliedKnowledge),
+            (LiteratureGenre)(GenreComboBox.SelectedItem ?? LiteratureGenre.AppliedKnowledge),
             LanguageTextBox.Text,
             PublishDateTimePicker.Value,
             NarratorTextBox.Text,

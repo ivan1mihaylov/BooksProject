@@ -1,9 +1,9 @@
 using BooksProject.Forms.Controls;
-using BooksProject.Models;
+using Common.Models;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
-namespace BooksProject;
+namespace BooksProject.Forms;
 
 public partial class MainScreen : MaterialForm
 {
@@ -110,6 +110,20 @@ public partial class MainScreen : MaterialForm
     {
         DeleteButton.Visible = BooksListView.SelectedItems.Count > 0;
         AddButton.Visible = BooksListView.SelectedItems.Count == 0;
+    }
+
+    private void BooksListView_MouseDoubleClick(object sender, MouseEventArgs e)
+    {
+        ListViewHitTestInfo info = BooksListView.HitTest(e.X, e.Y);
+        ListViewItem item = info.Item;
+
+        var book = Books.FirstOrDefault(b => b.Name == item.Text && b.Author == item.SubItems[1].Text);
+        var audioBook = AudioBooks.FirstOrDefault(b => b.Name == item.Text && b.Author == item.SubItems[1].Text);
+
+        if (item != null)
+        {
+            MessageBox.Show($"{book?.ToString() ?? audioBook?.ToString()}", "Информация за избтаната книга");
+        }
     }
 
     private void DeleteButton_Click(object sender, EventArgs e)

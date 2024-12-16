@@ -1,6 +1,6 @@
-﻿using BooksProject.Enums;
+﻿using Common.Models.Enums;
 
-namespace BooksProject.Models;
+namespace Common.Models;
 
 public class AudioBook : Book
 {
@@ -24,6 +24,8 @@ public class AudioBook : Book
     public string Narrator { get; set; } = default!;
     public TimeSpan Duration { get; set; }
     public decimal Price { get; set; }
+
+
 
     public override string ToString()
     {

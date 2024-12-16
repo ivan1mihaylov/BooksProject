@@ -1,4 +1,5 @@
-﻿namespace BooksProject;
+﻿
+namespace BooksProject.Forms;
 
 partial class MainScreen
 {
@@ -85,6 +86,7 @@ partial class MainScreen
         BooksListView.UseCompatibleStateImageBehavior = false;
         BooksListView.View = View.Details;
         BooksListView.ItemSelectionChanged += BooksListView_ItemSelectionChanged;
+        BooksListView.MouseDoubleClick += BooksListView_MouseDoubleClick;
         // 
         // NameColumn
         // 
