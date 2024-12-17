@@ -106,7 +106,7 @@ partial class MainScreen
         // LanguageColumn
         // 
         LanguageColumn.Text = "Език";
-        LanguageColumn.Width = 120;
+        LanguageColumn.Width = 138;
         // 
         // BooksPreviewPanel
         // 
